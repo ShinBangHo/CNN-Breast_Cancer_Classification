@@ -39,11 +39,14 @@ PyTorch 관련 라이브러리 및 영상 처리, 유틸리티 등의 라이브�
 
 ### 3. 모델 설명
 
-모델은 **resnet**을 사용했다
+모델 : **resnet**
 
-![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/3cdb9179-8323-48bb-9e12-93f8a765e1c4)
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/198ccac9-b20a-4e2b-827a-4fdab74851ad)![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/441ab539-8d5d-4f9c-ad3d-34b7e22f1557)
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/2310f4f8-7994-48f1-be7d-6c1d816d3094)
 
+기존 모델은 Simple2DCNN을 사용했지만 성능을 개선해보려고 augmentaion 함수, Learning Rate scheduler 등을 사용해봐도 개선이 크게 되지 않아 모델을 resnet으로 변경했다.
 
+네트워크의 깊이와 복잡성, 기울기 소실 (Gradient Vanishing) 현상 완화 등만 비교해봐도 성능의 개선이 크게 될 것으로 예상했기에 resnet을 기용했다. 
 
-+ 학습 파라미터
-> 초기 LR : 0.001 / LR schedular : multistep / batchsize : 32 / Loss function : CrossEntropy
+.
+
