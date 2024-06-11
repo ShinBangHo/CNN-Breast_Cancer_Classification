@@ -9,15 +9,15 @@
 이 모델은 유방암 환자의 초음파 사진 데이터로 훈련시켰으며 **클래스는 세 가지로 분류**된다 
 
 
-<img width="116" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/cd686558-4f3e-4fe7-a731-7194a9273358"><img width="155" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/5397253c-47ac-46b6-b5ce-bb719da994a8"><img width="113" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/149eb458-e2ea-4d13-a165-cb268f7049f0">
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/68dc1d36-e545-4aa7-a478-7ead0ed49d64)
 
 > benign : 상대적으로 성장 속도가 느리고 전이를 하지 않는 양성 종양 사진
 
-<img width="115" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/560dd063-0396-4eab-bd5f-92ecf6ef090d"><img width="124" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/93cc4cb4-9abc-4a01-ab11-9935b24f1495"><img width="115" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/bdc5003f-4c35-4aa5-bf9d-e6b66ecae8d9">
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/5b9361b2-e8bf-4888-975b-6dc08f941be2)
 
 > malignant : 성장이 빠르고 주위 조직과 다른 신체 부위로 퍼져나가는 악성 종양 사진
 
-<img width="119" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/a25cd535-7b9e-4372-8726-e631c65ca4cd"><img width="110" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/f7f5bc43-56bc-433a-8061-c0594c181ac1"><img width="113" alt="image" src="https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/33518e0f-f298-4337-a0b5-ac1facf7450f">
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/560e630f-2b70-48da-9f3d-1c2a404890de)
 
 > normal : 아무 이상 없는 사진
 
