@@ -80,14 +80,17 @@ class FrequencyMasking(object):
 # 데이터 증강을 포함한 변환 파이프라인 업데이트
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
-    transforms.RandomHorizontalFlip(),  # 랜덤으로 좌우 반전
-    transforms.RandomRotation(10),      # 랜덤으로 10도 회전
-    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),  # 색상 조절
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomVerticalFlip(),
+    transforms.RandomRotation(15),
+    transforms.RandomResizedCrop(224, scale=(0.8, 1.0)),
+    transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.1),
+    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1), scale=(0.8, 1.2), shear=10),
+    transforms.RandomPerspective(distortion_scale=0.2),
+    transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5)),
     transforms.ToTensor(),
-    TimeMasking(T=40, max_masks=1),
-    FrequencyMasking(F=30, max_masks=1)
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
-
 class ImageDataset(Dataset):
     def __init__(self, directory, transform=None):
         self.directory = directory
