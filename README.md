@@ -39,14 +39,51 @@ PyTorch 관련 라이브러리 및 영상 처리, 유틸리티 등의 라이브�
 
 ### 3. 모델 설명
 
-모델 : **resnet**
++ 모델 : **resnet**
 
 ![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/198ccac9-b20a-4e2b-827a-4fdab74851ad)![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/441ab539-8d5d-4f9c-ad3d-34b7e22f1557)
 ![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/2310f4f8-7994-48f1-be7d-6c1d816d3094)
 
 기존 모델은 Simple2DCNN을 사용했지만 성능을 개선해보려고 augmentaion 함수, Learning Rate scheduler 등을 사용해봐도 개선이 크게 되지 않아 모델을 resnet으로 변경했다.
 
-네트워크의 깊이와 복잡성, 기울기 소실 (Gradient Vanishing) 현상 완화 등만 비교해봐도 성능의 개선이 크게 될 것으로 예상했기에 resnet을 기용했다. 
+네트워크의 깊이와 복잡성, 기울기 소실 (Gradient Vanishing) 현상 완화 등을 비교해봐도 성능의 개선이 크게 될 것으로 예상했기에 resnet을 기용했다. 
 
 .
 
++ **Augmentation 함수**
+
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/17e89d2a-61dd-47eb-94b5-1b306698e395)
+
+
+더 높은 성능을 기대하기 위해 데이터 증강 기법 중 하나인 Augmentation 함수를 추가했다.
+
+GaussianBlur, RandomErasing, Normalize 등 다양하게 추가했다.
+
+.
+
++ 옵티마이저 변경 : **Adabelief**
+
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/0fdf2f45-6695-44e9-b518-83fa6192f145)![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/ab7f20fa-c787-41fc-bcf1-b9f5d5978749)
+
+기본 옵티마이저인 Adam에서 Adabelief로 변경했다.
+
+기존의 Adam과 비교했을 때 장점은 과적합(overfiting) 문제를 줄일 수 있도록 설계되었고 구현이 쉽다는 점이다.
+
+---
+
+### 4. 실험 결과
+
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/38e4f08f-9a84-4d9d-8ad7-6ee617bd551a)
+
+
+![image](https://github.com/ShinBangHo/CNN-Breast_Cancer_Classification/assets/164139725/ee64a987-ffa3-4525-bbf9-058044896274)
+
+평가 기준은 Accuracy, Avg Loss, F1-score로 진행했다.
+
+모델을 resnet으로 변경하고 epoch을 100, 200, 300 순서대로 올려본 결과, 200으로 했을 때의 전체적인 성능이 좋아 epoch은 200으로 유지했다.
+
+이후 Augmentation 함수를 추가 후, 옵티마이저를 Adam에서 Adabelief로 변경했다.
+
+---
+
+### 5. 추후 개선 사항
