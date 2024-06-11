@@ -87,3 +87,5 @@ GaussianBlur, RandomErasing, Normalize 등 다양하게 추가했다.
 ---
 
 ### 5. 추후 개선 사항
+
+데이터 증강을 더 다양하게 적용하고 훈련 과정에서 검증 단계 추가(validation set)을 사용하여 과적합 및 다양한 평가 매트릭스를 통해 개선할 수 있다고 생각한다.
